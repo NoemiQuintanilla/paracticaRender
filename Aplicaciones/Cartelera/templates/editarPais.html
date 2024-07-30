@@ -1,0 +1,22 @@
+{% extends "./plantilla.html"%}
+{%block body%}
+<h1>Editar Pais</h1>
+<div class="row">
+    <div class="col-md-12">
+        <form action="{% url 'procesarActualizacionPais'%}" method="post">
+            {% csrf_token %}
+            <input type="hidden" id="id" name="id" value="{{paisEditar.id}}">
+            <label for=""><b>Nombre</b></label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre" value="{{paisEditar.nombre}}">
+            <label for="">Continente</label>
+            <input name="continente" id="continente" class="form-control" placeholder="Ingrese su descripcion" value="{{paisEditar.continente}}">
+            <label for="">Capital</label>
+            <input name="capital" id="capital" class="form-control" placeholder="Ingrese la capital" value="{{paisEditar.capital}}">
+            <br>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger" href="{% url 'listadoPais'%}">Cancelar</a>
+        </form>
+    </div>
+</div>
+{%endblock%}

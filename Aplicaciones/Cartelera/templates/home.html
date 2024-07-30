@@ -1,0 +1,67 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block body %}
+
+
+
+<!-- poner un banner -->
+<div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/multicines.png' %}"
+                    class="d-block w-100" alt="CARTELERA">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/era.png'%} " class="d-block w-100" alt="CARTELERA">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/deap.png'%}"
+                    class="d-block w-100" alt="CARTELERA">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<br><br><br>
+<!-- poner misiion y vision  -->
+<div class="row alert alert-info">
+    <div class="col-6">
+        <center>
+            <h5><b>Misión</b></h5>
+        </center>
+        <br>
+        <p>Ofrecer una experiencia cinematográfica excepcional: Brindar a los espectadores un ambiente confortable,
+            tecnología de punta y una selección diversa de películas para que disfruten de una experiencia memorable.
+        </p>
+    </div>
+    <div class="col-6">
+        <center>
+            <h5><b>Visión</b></h5>
+        </center>
+
+        <br>
+        <p>Ser la cadena de cines líder en la región: Consolidarnos como la referencia en la industria cinematográfica,
+            destacándonos por la calidad de nuestras instalaciones, la excelencia de nuestro servicio y la diversidad de
+            nuestra oferta cinematográfica.</p>
+    </div>
+</div>
+<!-- adobe color -->
+{% endblock %}

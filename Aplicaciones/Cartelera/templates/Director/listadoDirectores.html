@@ -1,0 +1,57 @@
+<br>
+<table class="table table-bordered table-striped table-hover" id="tbl-director">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">DNI</th>
+            <th class="text-center">NOMBRE</th>
+            <th class="text-center">APELLIDO</th>
+            <th class="text-center">FOTOGRAFIA</th>
+            <th class="text-center">ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for directorTemporal in directores %}
+            <tr>
+                <td class="text-center">{{ directorTemporal.id }}</td>
+                <td class="text-center">{{ directorTemporal.dni }}</td>
+                <td class="text-center">{{ directorTemporal.nombre }}</td>
+                <td class="text-center">{{ directorTemporal.apellido }}</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Archivo Adjunto
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <a class="dropdown-item" href="{{directorTemporal.fotografia.url}}" target="_blank">Ver<a>
+                            </li>
+    
+                            <li><a class="dropdown-item" download href="{{director.fotografia.url}}"
+                                    target="_blank">Descargar</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <a href="" class="btn btn-outline-warning btn-circle"
+                    title="Editar Cine">
+                        <i class="fas fa-pencil"></i>
+                    </a>
+                    <a href="" onclick="return confirm('¿Estás seguro?');" class="btn btn-outline-danger btn-circle">
+                        <i class="fas fa-trash"> </i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    var table = new DataTable('#tbl-director');
+</script>
+<style>
+    .btn-circle{ 
+        border-radius:100px !important;
+    }
+</style>
